@@ -20,7 +20,7 @@ def main():
 	#st.beta_set_page_config(layout="wide")
 	
 	st.title('Portugal está na próxima ronda?')
-	st.subheader(' Não é preciso sacar da calculadora')
+	st.subheader(' Não é preciso sacar da calculadora - vê aqui em tempo real')
 	try: 
 		df_test=get_live_score()
 		df_test['home_score'] = df_test['home_score'].astype(int)
