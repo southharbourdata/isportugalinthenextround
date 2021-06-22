@@ -14,8 +14,8 @@ from result_scrapper import get_live_score,arewewinning
 # 		<h4 style="color:white;text-align:center;">Diabetes </h4>
 # 		</div>
 # 		"""
-SIII = "images\\ronaldohattrickjpg.jpg"
-NOOO = "images\\sad-portuguese-soccer-fan-with-the-portuguese-CR8RCK.jpg"
+SIII = "images/ronaldohattrickjpg.jpg"
+NOOO = "images/sad-portuguese-soccer-fan-with-the-portuguese-CR8RCK.jpg"
 
 
 def main():
