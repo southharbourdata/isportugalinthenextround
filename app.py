@@ -13,6 +13,7 @@ from result_scrapper import get_live_score,arewewinning
 # 		"""
 SIII = "images/ronaldohattrickjpg.jpg"
 NOOO = "images/sad-portuguese-soccer-fan-with-the-portuguese-CR8RCK.jpg"
+MEH = "images/Ronaldo_fixe.jpg"
 
 
 def main():
@@ -27,13 +28,13 @@ def main():
 		passing=arewewinning(df_test)
 		if passing:
 			st.image(SIII,use_column_width = 'auto')
-			st.success('TAMOS LÁ - NUNCA DUVIDEI')
+			st.success("'TAMOS LÁ - NUNCA DUVIDEI")
 		else:
 			st.image(NOOO,use_column_width = 'auto')
 			st.error('EU JÁ SABIA - NUNCA ACREDITEI')
 	except:
-		st.image(SIII,use_column_width = 'auto')
-		st.success('TAMOS LÁ - NUNCA DUVIDEI')
+		st.image(MEH,use_column_width = 'auto')
+		st.warning('AINDA NÃO COMEÇOU O JOGO... - MAS CONFIA PUTO')
 	
 
 if __name__ == '__main__':
