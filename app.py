@@ -3,10 +3,7 @@ import streamlit.components.v1 as stc
 
 import base64
 
-
 from result_scrapper import get_live_score,arewewinning
-
-
 
 # html_temp = """
 # 		<div style="background-color:#3872fb;padding:10px;border-radius:10px">
