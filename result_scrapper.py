@@ -1,0 +1,62 @@
+from bs4 import BeautifulSoup
+import requests
+
+import pandas as pd
+# Data Viz Pkgs
+import matplotlib.pyplot as plt 
+import matplotlib
+matplotlib.use('Agg')
+import seaborn as sns
+import plotly.express as px 
+
+
+
+
+def get_live_score():
+    """Returns live score of the matches in GROUP F on 23/06/2021 
+    in the EURO football championship"""
+    
+    result = requests.get("https://www.bbc.com/sport/football/european-championship/scores-fixtures/2021-06-23")
+    src = result.content
+    soup = BeautifulSoup(src, 'html.parser')
+
+    table = soup.find_all("ul")
+    results_table = table[-3]
+    lists_matches = results_table.find_all("a")
+    test_li = lists_matches[1]
+    lists_test = test_li.find_all("span")
+
+    df_results = pd.DataFrame(columns=["home_score","away_score","home_name","away_name"])
+    
+    for idx, l in enumerate(lists_matches):
+        content = l.find_all("span")
+
+        df_results.loc[idx,"home_score"] = content[5].text
+        df_results.loc[idx,"away_score"] = content[12].text
+        df_results.loc[idx,"home_name"] = content[1].find_all("abbr")[0].text
+        df_results.loc[idx,"away_name"] = content[9].find_all("abbr")[0].text
+    return df_results
+
+
+def arewewinning(df):
+	df_=df.copy()
+	passing=True
+	if (df.iloc[1,0]<df.iloc[1,1]):
+		if (df.iloc[1,0]+2<df.iloc[1,1])|(df.iloc[0,0]<df.iloc[0,1]):
+			passing=False
+	return passing
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
