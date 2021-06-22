@@ -8,7 +8,7 @@ def get_live_score():
     """Returns live score of the matches in GROUP F on 23/06/2021 
     in the EURO football championship"""
     
-    result = requests.get("https://www.bbc.com/sport/football/european-championship/scores-fixtures/2021-06-23")
+    result = requests.get("https://www.bbc.com/sport/football/european-championship/scores-fixtures/2021-06-21")
     src = result.content
     soup = BeautifulSoup(src, 'html.parser')
 
