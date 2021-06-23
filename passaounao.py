@@ -5,20 +5,13 @@ import base64
 
 from result_scrapper import get_live_score,arewewinning
 
-# html_temp = """
-# 		<div style="background-color:#3872fb;padding:10px;border-radius:10px">
-# 		<h1 style="color:white;text-align:center;">Early Stage DM Risk Data App </h1>
-# 		<h4 style="color:white;text-align:center;">Diabetes </h4>
-# 		</div>
-# 		"""
+
 SIII = "images/ronaldohattrickjpg.jpg"
 NOOO = "images/sad-portuguese-soccer-fan-with-the-portuguese-CR8RCK.jpg"
 MEH = "images/Ronaldo_fixe.jpg"
 
 
 def main():
-	#st.beta_set_page_config(layout="wide")
-	
 	st.title('Portugal está na próxima ronda?')
 	st.subheader(' Não é preciso sacar da calculadora - vê aqui em tempo real')
 	try: 
@@ -36,6 +29,51 @@ def main():
 		st.image(MEH,use_column_width = 'auto')
 		st.warning('AINDA NÃO COMEÇOU O JOGO... - MAS CONFIA PUTO')
 	
+##########
+# Footer #                         #  https://discuss.streamlit.io/t/st-footer/6447
+##########
+
+footer="""<style>
+a:link , a:visited{
+color: blue;
+background-color: transparent;
+text-decoration: underline;
+}
+
+a:hover,  a:active {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: white;
+color: black;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>with ❤ by <a style='display: block; text-align: center;' href="https://github.com/southharbourdata/isportugalinthenextround" target="_blank">South Harbour Data</a></p>
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
+
+#############
+# Hide Menu #                         #  https://discuss.streamlit.io/t/how-do-i-hide-remove-the-menu-in-production/362/10
+#############
+
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 if __name__ == '__main__':
 	main()
