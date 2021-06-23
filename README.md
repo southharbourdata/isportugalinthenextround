@@ -1,6 +1,14 @@
 # isportugalinthenextroun
 
-Small webapp that scrapes the live-results 
+Small webapp 
+
+
+
+http://portugalpassaounao.herokuapp.com/
+
+
+
+that scrapes the live-results 
 
 
 
